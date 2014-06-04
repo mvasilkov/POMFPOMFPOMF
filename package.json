@@ -1,0 +1,26 @@
+{
+    "name": "POMF",
+    "version": "0.0.1",
+    "description": "POMF =3",
+    "main": "app.js",
+    "scripts": {
+        "test": "node_modules/.bin/mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mvasilkov/POMFPOMFPOMF.git"
+    },
+    "keywords": [
+        "POMF",
+        "=3"
+    ],
+    "author": "Mark Vasilkov (https://github.com/mvasilkov)",
+    "license": "MIT",
+    "homepage": "https://github.com/mvasilkov/POMFPOMFPOMF",
+    "dependencies": {
+        "express": "^4.4.1"
+    },
+    "devDependencies": {
+        "mocha": "^1.20.1"
+    }
+}
