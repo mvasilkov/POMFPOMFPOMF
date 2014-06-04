@@ -6,8 +6,12 @@ var app     = express()
 
 app.enable('strict routing')
 app.disable('x-powered-by')
-
 app.use(morgan('dev'))
+
+app.get('/index.html', function (req, res) {
+    res.redirect(301, '/')
+})
+
 app.use(favicon(__dirname + '/pub/favicon.ico'))
 app.use(express.static(__dirname + '/pub'))
 

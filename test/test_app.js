@@ -30,4 +30,11 @@ describe('app', function () {
                 done(err)
             })
     })
+
+    it('redirects index.html', function (done) {
+        req
+            .get('/index.html')
+            .expect('location', '/')
+            .expect(301, done)
+    })
 })
