@@ -11,7 +11,12 @@ app.use(morgan('dev'))
 app.use(favicon(__dirname + '/pub/favicon.ico'))
 app.use(express.static(__dirname + '/pub'))
 
-var port = process.env.PORT || 8086
-var server = app.listen(port, function () {
-    console.log('POMF =3 on port %d', server.address().port)
-})
+function run() {
+    var port = process.env.PORT || 8086
+    var server = app.listen(port, function () {
+        console.log('POMF =3 on port %d', server.address().port)
+    })
+}
+
+if (require.main === module) run()
+else module.exports = app
