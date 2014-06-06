@@ -1,1 +1,0 @@
-../../node_modules/bootstrap_git/dist/js/bootstrap.js

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 var express = require('express')
-var morgan  = require('morgan')
+var logger  = require('morgan')
 var favicon = require('serve-favicon')
 var app     = express()
 
 app.enable('strict routing')
 app.disable('x-powered-by')
-app.use(morgan('dev'))
+app.use(logger('dev'))
 
 app.get('/index.html', function (req, res) {
     res.redirect(301, '/')

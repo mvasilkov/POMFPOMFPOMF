@@ -6,6 +6,13 @@ var req     = request(app)
 describe('app', function () {
     function eq(a, b) { assert.strictEqual(a, b) }
 
+    it('has index', function (done) {
+        req
+            .get('')
+            .expect('content-type', 'text/html; charset=UTF-8')
+            .expect(200, done)
+    })
+
     it('has favicon.ico', function (done) {
         req
             .get('/favicon.ico')
