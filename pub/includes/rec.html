@@ -1,0 +1,6 @@
+<code>{{ rec.name }}</code>
+<button class="btn btn-sm btn-primary" ng-click=add(rec)>add</button>
+<button class="btn btn-sm btn-danger" ng-click=del(rec) ng-show=rec.branches.length>del</button>
+<ul ng-if=rec.branches.length>
+    <li ng-repeat="rec in rec.branches" ng-include="'includes/rec.html'"></li>
+</ul>
