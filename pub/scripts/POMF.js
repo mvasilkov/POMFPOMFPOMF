@@ -1,9 +1,10 @@
 var app = angular.module('POMF', ['ngRoute'])
+var template = 'includes/rec.html'
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         controller: 'POMFController',
-        templateUrl: 'includes/rec.html'
+        templateUrl: template
     })
     .otherwise({ redirectTo: '/' })
 
@@ -13,11 +14,17 @@ app.config(function ($routeProvider, $locationProvider) {
 var c = 0
 
 app.controller('POMFController', function ($scope) {
-    $scope.rec = { name: 'rec ' + c++, branches: [] }
+    $scope.inc = template
+
+    $scope.rec = { name: 'rec ' + c++, parts: [] }
 
     $scope.add = function (rec) {
-        rec.branches.push({ name: 'rec ' + c++, branches: [] })
+        rec.parts.push({ name: 'rec ' + c++, parts: [] })
     }
 
-    $scope.del = function (rec) { rec.branches.length = 0 }
+    $scope.del = function (rp, rec) {
+        var n = rp.parts.indexOf(rec)
+        if (n == -1) return
+        rp.parts.splice(n, 1)
+    }
 })

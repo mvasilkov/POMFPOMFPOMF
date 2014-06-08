@@ -1,6 +1,8 @@
-<code>{{ rec.name }}</code>
-<button class="btn btn-sm btn-primary" ng-click=add(rec)>add</button>
-<button class="btn btn-sm btn-danger" ng-click=del(rec) ng-show=rec.branches.length>del</button>
-<ul ng-if=rec.branches.length>
-    <li ng-repeat="rec in rec.branches" ng-include="'includes/rec.html'"></li>
-</ul>
+<li ng-repeat="rec in rec.parts">
+    {{ rec.name }}
+    <button class="btn btn-danger" ng-click=del($parent.rec,rec)>del</button>
+    <ul ng-include=inc></ul>
+</li>
+<li>
+    <button class="btn btn-primary" ng-click=add(rec)>add</button>
+</li>
