@@ -22,9 +22,9 @@ app.controller('POMFController', function ($scope) {
         rec.parts.push({ name: 'rec ' + c++, parts: [] })
     }
 
-    $scope.del = function (rp, rec) {
-        var n = rp.parts.indexOf(rec)
+    $scope.del = function (parent, rec) {
+        var n = parent.parts.indexOf(rec)
         if (n == -1) return
-        rp.parts.splice(n, 1)
+        parent.parts.splice(n, 1)
     }
 })
