@@ -28,3 +28,15 @@ app.controller('POMFController', function ($scope) {
         parent.parts.splice(n, 1)
     }
 })
+
+app.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind('keypress', function (event) {
+            if (event.which !== 13) return
+            scope.$apply(function () {
+                scope.$eval(attrs.ngEnter, { 'event': event })
+            })
+            event.preventDefault()
+        })
+    }
+})
